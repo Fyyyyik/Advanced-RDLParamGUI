@@ -28,478 +28,465 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openReferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parameterPatchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importPatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generatePatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.decompressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recompressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autocompressOnSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.fileList = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.valueList = new System.Windows.Forms.ListBox();
-            this.hexData = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.intData = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.floatData = new System.Windows.Forms.TextBox();
-            this.curDataBox = new System.Windows.Forms.GroupBox();
-            this.refDataBox = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.floatDataOrig = new System.Windows.Forms.TextBox();
-            this.hexDataOrig = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.intDataOrig = new System.Windows.Forms.TextBox();
-            this.labelBox = new System.Windows.Forms.TextBox();
-            this.setLabel = new System.Windows.Forms.Button();
-            this.clrLabel = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.descriptionBox = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
-            this.curDataBox.SuspendLayout();
-            this.refDataBox.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            openReferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            loadFromDolphinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            parameterPatchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            importPatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            generatePatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            updateLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            compressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            decompressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            recompressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            autocompressOnSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            label1 = new System.Windows.Forms.Label();
+            fileList = new System.Windows.Forms.ListBox();
+            label2 = new System.Windows.Forms.Label();
+            valueList = new System.Windows.Forms.ListBox();
+            hexData = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            intData = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
+            floatData = new System.Windows.Forms.TextBox();
+            curDataBox = new System.Windows.Forms.GroupBox();
+            refDataBox = new System.Windows.Forms.GroupBox();
+            label6 = new System.Windows.Forms.Label();
+            floatDataOrig = new System.Windows.Forms.TextBox();
+            hexDataOrig = new System.Windows.Forms.TextBox();
+            label7 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            intDataOrig = new System.Windows.Forms.TextBox();
+            labelBox = new System.Windows.Forms.TextBox();
+            setLabel = new System.Windows.Forms.Button();
+            clrLabel = new System.Windows.Forms.Button();
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            descriptionBox = new System.Windows.Forms.TextBox();
+            menuStrip1.SuspendLayout();
+            curDataBox.SuspendLayout();
+            refDataBox.SuspendLayout();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.parameterPatchingToolStripMenuItem,
-            this.updateLabelsToolStripMenuItem,
-            this.compressionToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(882, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, parameterPatchingToolStripMenuItem, updateLabelsToolStripMenuItem, compressionToolStripMenuItem });
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            menuStrip1.Size = new System.Drawing.Size(774, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.openReferenceToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { openToolStripMenuItem, openReferenceToolStripMenuItem, loadFromDolphinToolStripMenuItem, saveToolStripMenuItem, saveAsToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O;
+            openToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            openToolStripMenuItem.Text = "Open";
+            openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
             // openReferenceToolStripMenuItem
             // 
-            this.openReferenceToolStripMenuItem.Name = "openReferenceToolStripMenuItem";
-            this.openReferenceToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.O)));
-            this.openReferenceToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
-            this.openReferenceToolStripMenuItem.Text = "Open Reference";
-            this.openReferenceToolStripMenuItem.Click += new System.EventHandler(this.openReferenceToolStripMenuItem_Click);
+            openReferenceToolStripMenuItem.Name = "openReferenceToolStripMenuItem";
+            openReferenceToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.O;
+            openReferenceToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            openReferenceToolStripMenuItem.Text = "Open Reference";
+            openReferenceToolStripMenuItem.Click += openReferenceToolStripMenuItem_Click;
+            // 
+            // loadFromDolphinToolStripMenuItem
+            // 
+            loadFromDolphinToolStripMenuItem.Name = "loadFromDolphinToolStripMenuItem";
+            loadFromDolphinToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            loadFromDolphinToolStripMenuItem.Text = "Load From Dolphin";
+            loadFromDolphinToolStripMenuItem.Click += loadFromDolphinToolStripMenuItem_Click;
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Enabled = false;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            saveToolStripMenuItem.Enabled = false;
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S;
+            saveToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // saveAsToolStripMenuItem
             // 
-            this.saveAsToolStripMenuItem.Enabled = false;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            saveAsToolStripMenuItem.Enabled = false;
+            saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            saveAsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.S;
+            saveAsToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            saveAsToolStripMenuItem.Text = "Save As...";
+            saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
             // 
             // parameterPatchingToolStripMenuItem
             // 
-            this.parameterPatchingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importPatchToolStripMenuItem,
-            this.generatePatchToolStripMenuItem});
-            this.parameterPatchingToolStripMenuItem.Enabled = false;
-            this.parameterPatchingToolStripMenuItem.Name = "parameterPatchingToolStripMenuItem";
-            this.parameterPatchingToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.parameterPatchingToolStripMenuItem.Text = "Patching";
+            parameterPatchingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { importPatchToolStripMenuItem, generatePatchToolStripMenuItem });
+            parameterPatchingToolStripMenuItem.Enabled = false;
+            parameterPatchingToolStripMenuItem.Name = "parameterPatchingToolStripMenuItem";
+            parameterPatchingToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            parameterPatchingToolStripMenuItem.Text = "Patching";
             // 
             // importPatchToolStripMenuItem
             // 
-            this.importPatchToolStripMenuItem.Name = "importPatchToolStripMenuItem";
-            this.importPatchToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
-            this.importPatchToolStripMenuItem.Text = "Import Patch";
-            this.importPatchToolStripMenuItem.Click += new System.EventHandler(this.importPatchToolStripMenuItem_Click);
+            importPatchToolStripMenuItem.Name = "importPatchToolStripMenuItem";
+            importPatchToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            importPatchToolStripMenuItem.Text = "Import Patch";
+            importPatchToolStripMenuItem.Click += importPatchToolStripMenuItem_Click;
             // 
             // generatePatchToolStripMenuItem
             // 
-            this.generatePatchToolStripMenuItem.Name = "generatePatchToolStripMenuItem";
-            this.generatePatchToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
-            this.generatePatchToolStripMenuItem.Text = "Generate Patch";
-            this.generatePatchToolStripMenuItem.Click += new System.EventHandler(this.generatePatchToolStripMenuItem_Click);
+            generatePatchToolStripMenuItem.Name = "generatePatchToolStripMenuItem";
+            generatePatchToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            generatePatchToolStripMenuItem.Text = "Generate Patch";
+            generatePatchToolStripMenuItem.Click += generatePatchToolStripMenuItem_Click;
             // 
             // updateLabelsToolStripMenuItem
             // 
-            this.updateLabelsToolStripMenuItem.Enabled = false;
-            this.updateLabelsToolStripMenuItem.Name = "updateLabelsToolStripMenuItem";
-            this.updateLabelsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.updateLabelsToolStripMenuItem.Text = "Refresh";
-            this.updateLabelsToolStripMenuItem.Click += new System.EventHandler(this.updateLabelsToolStripMenuItem_Click);
+            updateLabelsToolStripMenuItem.Enabled = false;
+            updateLabelsToolStripMenuItem.Name = "updateLabelsToolStripMenuItem";
+            updateLabelsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            updateLabelsToolStripMenuItem.Text = "Refresh";
+            updateLabelsToolStripMenuItem.Click += updateLabelsToolStripMenuItem_Click;
             // 
             // compressionToolStripMenuItem
             // 
-            this.compressionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.decompressToolStripMenuItem,
-            this.recompressToolStripMenuItem,
-            this.autocompressOnSaveToolStripMenuItem});
-            this.compressionToolStripMenuItem.Name = "compressionToolStripMenuItem";
-            this.compressionToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
-            this.compressionToolStripMenuItem.Text = "Compression";
+            compressionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { decompressToolStripMenuItem, recompressToolStripMenuItem, autocompressOnSaveToolStripMenuItem });
+            compressionToolStripMenuItem.Name = "compressionToolStripMenuItem";
+            compressionToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            compressionToolStripMenuItem.Text = "Compression";
             // 
             // decompressToolStripMenuItem
             // 
-            this.decompressToolStripMenuItem.Name = "decompressToolStripMenuItem";
-            this.decompressToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.decompressToolStripMenuItem.Size = new System.Drawing.Size(314, 26);
-            this.decompressToolStripMenuItem.Text = "Decompress File";
-            this.decompressToolStripMenuItem.Click += new System.EventHandler(this.decompressToolStripMenuItem_Click);
+            decompressToolStripMenuItem.Name = "decompressToolStripMenuItem";
+            decompressToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D;
+            decompressToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            decompressToolStripMenuItem.Text = "Decompress File";
+            decompressToolStripMenuItem.Click += decompressToolStripMenuItem_Click;
             // 
             // recompressToolStripMenuItem
             // 
-            this.recompressToolStripMenuItem.Name = "recompressToolStripMenuItem";
-            this.recompressToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-            this.recompressToolStripMenuItem.Size = new System.Drawing.Size(314, 26);
-            this.recompressToolStripMenuItem.Text = "Compress File";
-            this.recompressToolStripMenuItem.Click += new System.EventHandler(this.recompressToolStripMenuItem_Click);
+            recompressToolStripMenuItem.Name = "recompressToolStripMenuItem";
+            recompressToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D;
+            recompressToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            recompressToolStripMenuItem.Text = "Compress File";
+            recompressToolStripMenuItem.Click += recompressToolStripMenuItem_Click;
             // 
             // autocompressOnSaveToolStripMenuItem
             // 
-            this.autocompressOnSaveToolStripMenuItem.Checked = true;
-            this.autocompressOnSaveToolStripMenuItem.CheckOnClick = true;
-            this.autocompressOnSaveToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.autocompressOnSaveToolStripMenuItem.Name = "autocompressOnSaveToolStripMenuItem";
-            this.autocompressOnSaveToolStripMenuItem.Size = new System.Drawing.Size(314, 26);
-            this.autocompressOnSaveToolStripMenuItem.Text = "Autocompress .cmp Files On Save";
-            this.autocompressOnSaveToolStripMenuItem.CheckedChanged += new System.EventHandler(this.autocompressOnSaveToolStripMenuItem_CheckedChanged);
+            autocompressOnSaveToolStripMenuItem.Checked = true;
+            autocompressOnSaveToolStripMenuItem.CheckOnClick = true;
+            autocompressOnSaveToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            autocompressOnSaveToolStripMenuItem.Name = "autocompressOnSaveToolStripMenuItem";
+            autocompressOnSaveToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            autocompressOnSaveToolStripMenuItem.Text = "Autocompress .cmp Files On Save";
+            autocompressOnSaveToolStripMenuItem.CheckedChanged += autocompressOnSaveToolStripMenuItem_CheckedChanged;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(17, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Param Files";
+            label1.AutoSize = true;
+            label1.ForeColor = System.Drawing.SystemColors.Control;
+            label1.Location = new System.Drawing.Point(15, 32);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(67, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Param Files";
             // 
             // fileList
             // 
-            this.fileList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.fileList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fileList.ForeColor = System.Drawing.SystemColors.Window;
-            this.fileList.FormattingEnabled = true;
-            this.fileList.HorizontalScrollbar = true;
-            this.fileList.ItemHeight = 16;
-            this.fileList.Location = new System.Drawing.Point(21, 55);
-            this.fileList.Margin = new System.Windows.Forms.Padding(4);
-            this.fileList.Name = "fileList";
-            this.fileList.Size = new System.Drawing.Size(326, 564);
-            this.fileList.TabIndex = 2;
-            this.fileList.SelectedIndexChanged += new System.EventHandler(this.fileList_SelectedIndexChanged);
+            fileList.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            fileList.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            fileList.ForeColor = System.Drawing.SystemColors.Window;
+            fileList.FormattingEnabled = true;
+            fileList.HorizontalScrollbar = true;
+            fileList.ItemHeight = 15;
+            fileList.Location = new System.Drawing.Point(18, 52);
+            fileList.Margin = new System.Windows.Forms.Padding(4);
+            fileList.Name = "fileList";
+            fileList.Size = new System.Drawing.Size(286, 529);
+            fileList.TabIndex = 2;
+            fileList.SelectedIndexChanged += fileList_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(355, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Values";
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.ForeColor = System.Drawing.SystemColors.Control;
+            label2.Location = new System.Drawing.Point(311, 33);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(40, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Values";
             // 
             // valueList
             // 
-            this.valueList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.valueList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.valueList.ForeColor = System.Drawing.SystemColors.Window;
-            this.valueList.FormattingEnabled = true;
-            this.valueList.HorizontalScrollbar = true;
-            this.valueList.ItemHeight = 16;
-            this.valueList.Location = new System.Drawing.Point(355, 55);
-            this.valueList.Margin = new System.Windows.Forms.Padding(4);
-            this.valueList.Name = "valueList";
-            this.valueList.Size = new System.Drawing.Size(305, 484);
-            this.valueList.TabIndex = 5;
-            this.valueList.SelectedIndexChanged += new System.EventHandler(this.valueList_SelectedIndexChanged);
+            valueList.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            valueList.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            valueList.ForeColor = System.Drawing.SystemColors.Window;
+            valueList.FormattingEnabled = true;
+            valueList.HorizontalScrollbar = true;
+            valueList.ItemHeight = 15;
+            valueList.Location = new System.Drawing.Point(311, 52);
+            valueList.Margin = new System.Windows.Forms.Padding(4);
+            valueList.Name = "valueList";
+            valueList.Size = new System.Drawing.Size(267, 454);
+            valueList.TabIndex = 5;
+            valueList.SelectedIndexChanged += valueList_SelectedIndexChanged;
             // 
             // hexData
             // 
-            this.hexData.Location = new System.Drawing.Point(12, 41);
-            this.hexData.Margin = new System.Windows.Forms.Padding(4);
-            this.hexData.Name = "hexData";
-            this.hexData.Size = new System.Drawing.Size(87, 22);
-            this.hexData.TabIndex = 6;
-            this.hexData.TextChanged += new System.EventHandler(this.hexData_TextChanged);
+            hexData.Location = new System.Drawing.Point(10, 38);
+            hexData.Margin = new System.Windows.Forms.Padding(4);
+            hexData.Name = "hexData";
+            hexData.Size = new System.Drawing.Size(77, 23);
+            hexData.TabIndex = 6;
+            hexData.TextChanged += hexData_TextChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Hex";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(7, 19);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(27, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Hex";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 69);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "UInt32";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(7, 65);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(41, 15);
+            label4.TabIndex = 8;
+            label4.Text = "UInt32";
             // 
             // intData
             // 
-            this.intData.Location = new System.Drawing.Point(12, 89);
-            this.intData.Margin = new System.Windows.Forms.Padding(4);
-            this.intData.Name = "intData";
-            this.intData.Size = new System.Drawing.Size(169, 22);
-            this.intData.TabIndex = 9;
-            this.intData.TextChanged += new System.EventHandler(this.intData_TextChanged);
+            intData.Location = new System.Drawing.Point(10, 83);
+            intData.Margin = new System.Windows.Forms.Padding(4);
+            intData.Name = "intData";
+            intData.Size = new System.Drawing.Size(148, 23);
+            intData.TabIndex = 9;
+            intData.TextChanged += intData_TextChanged;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 117);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Float";
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(7, 110);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(33, 15);
+            label5.TabIndex = 10;
+            label5.Text = "Float";
             // 
             // floatData
             // 
-            this.floatData.Location = new System.Drawing.Point(12, 138);
-            this.floatData.Margin = new System.Windows.Forms.Padding(4);
-            this.floatData.Name = "floatData";
-            this.floatData.Size = new System.Drawing.Size(169, 22);
-            this.floatData.TabIndex = 11;
-            this.floatData.TextChanged += new System.EventHandler(this.floatData_TextChanged);
+            floatData.Location = new System.Drawing.Point(10, 129);
+            floatData.Margin = new System.Windows.Forms.Padding(4);
+            floatData.Name = "floatData";
+            floatData.Size = new System.Drawing.Size(148, 23);
+            floatData.TabIndex = 11;
+            floatData.TextChanged += floatData_TextChanged;
             // 
             // curDataBox
             // 
-            this.curDataBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.curDataBox.Controls.Add(this.label3);
-            this.curDataBox.Controls.Add(this.floatData);
-            this.curDataBox.Controls.Add(this.hexData);
-            this.curDataBox.Controls.Add(this.label5);
-            this.curDataBox.Controls.Add(this.label4);
-            this.curDataBox.Controls.Add(this.intData);
-            this.curDataBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.curDataBox.Location = new System.Drawing.Point(669, 55);
-            this.curDataBox.Margin = new System.Windows.Forms.Padding(4);
-            this.curDataBox.Name = "curDataBox";
-            this.curDataBox.Padding = new System.Windows.Forms.Padding(4);
-            this.curDataBox.Size = new System.Drawing.Size(197, 178);
-            this.curDataBox.TabIndex = 12;
-            this.curDataBox.TabStop = false;
-            this.curDataBox.Text = "Current Data";
+            curDataBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            curDataBox.Controls.Add(label3);
+            curDataBox.Controls.Add(floatData);
+            curDataBox.Controls.Add(hexData);
+            curDataBox.Controls.Add(label5);
+            curDataBox.Controls.Add(label4);
+            curDataBox.Controls.Add(intData);
+            curDataBox.ForeColor = System.Drawing.SystemColors.Control;
+            curDataBox.Location = new System.Drawing.Point(585, 52);
+            curDataBox.Margin = new System.Windows.Forms.Padding(4);
+            curDataBox.Name = "curDataBox";
+            curDataBox.Padding = new System.Windows.Forms.Padding(4);
+            curDataBox.Size = new System.Drawing.Size(172, 167);
+            curDataBox.TabIndex = 12;
+            curDataBox.TabStop = false;
+            curDataBox.Text = "Current Data";
             // 
             // refDataBox
             // 
-            this.refDataBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.refDataBox.Controls.Add(this.label6);
-            this.refDataBox.Controls.Add(this.floatDataOrig);
-            this.refDataBox.Controls.Add(this.hexDataOrig);
-            this.refDataBox.Controls.Add(this.label7);
-            this.refDataBox.Controls.Add(this.label8);
-            this.refDataBox.Controls.Add(this.intDataOrig);
-            this.refDataBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.refDataBox.Location = new System.Drawing.Point(669, 241);
-            this.refDataBox.Margin = new System.Windows.Forms.Padding(4);
-            this.refDataBox.Name = "refDataBox";
-            this.refDataBox.Padding = new System.Windows.Forms.Padding(4);
-            this.refDataBox.Size = new System.Drawing.Size(197, 178);
-            this.refDataBox.TabIndex = 13;
-            this.refDataBox.TabStop = false;
-            this.refDataBox.Text = "Reference Data";
+            refDataBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            refDataBox.Controls.Add(label6);
+            refDataBox.Controls.Add(floatDataOrig);
+            refDataBox.Controls.Add(hexDataOrig);
+            refDataBox.Controls.Add(label7);
+            refDataBox.Controls.Add(label8);
+            refDataBox.Controls.Add(intDataOrig);
+            refDataBox.ForeColor = System.Drawing.SystemColors.Control;
+            refDataBox.Location = new System.Drawing.Point(585, 226);
+            refDataBox.Margin = new System.Windows.Forms.Padding(4);
+            refDataBox.Name = "refDataBox";
+            refDataBox.Padding = new System.Windows.Forms.Padding(4);
+            refDataBox.Size = new System.Drawing.Size(172, 167);
+            refDataBox.TabIndex = 13;
+            refDataBox.TabStop = false;
+            refDataBox.Text = "Reference Data";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 20);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 16);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Hex";
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(7, 19);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(27, 15);
+            label6.TabIndex = 7;
+            label6.Text = "Hex";
             // 
             // floatDataOrig
             // 
-            this.floatDataOrig.Location = new System.Drawing.Point(12, 138);
-            this.floatDataOrig.Margin = new System.Windows.Forms.Padding(4);
-            this.floatDataOrig.Name = "floatDataOrig";
-            this.floatDataOrig.ReadOnly = true;
-            this.floatDataOrig.Size = new System.Drawing.Size(169, 22);
-            this.floatDataOrig.TabIndex = 11;
+            floatDataOrig.Location = new System.Drawing.Point(10, 129);
+            floatDataOrig.Margin = new System.Windows.Forms.Padding(4);
+            floatDataOrig.Name = "floatDataOrig";
+            floatDataOrig.ReadOnly = true;
+            floatDataOrig.Size = new System.Drawing.Size(148, 23);
+            floatDataOrig.TabIndex = 11;
             // 
             // hexDataOrig
             // 
-            this.hexDataOrig.Location = new System.Drawing.Point(12, 41);
-            this.hexDataOrig.Margin = new System.Windows.Forms.Padding(4);
-            this.hexDataOrig.Name = "hexDataOrig";
-            this.hexDataOrig.ReadOnly = true;
-            this.hexDataOrig.Size = new System.Drawing.Size(87, 22);
-            this.hexDataOrig.TabIndex = 6;
+            hexDataOrig.Location = new System.Drawing.Point(10, 38);
+            hexDataOrig.Margin = new System.Windows.Forms.Padding(4);
+            hexDataOrig.Name = "hexDataOrig";
+            hexDataOrig.ReadOnly = true;
+            hexDataOrig.Size = new System.Drawing.Size(77, 23);
+            hexDataOrig.TabIndex = 6;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 117);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 16);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Float";
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(7, 110);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(33, 15);
+            label7.TabIndex = 10;
+            label7.Text = "Float";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 69);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "UInt32";
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(7, 65);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(41, 15);
+            label8.TabIndex = 8;
+            label8.Text = "UInt32";
             // 
             // intDataOrig
             // 
-            this.intDataOrig.Location = new System.Drawing.Point(12, 89);
-            this.intDataOrig.Margin = new System.Windows.Forms.Padding(4);
-            this.intDataOrig.Name = "intDataOrig";
-            this.intDataOrig.ReadOnly = true;
-            this.intDataOrig.Size = new System.Drawing.Size(169, 22);
-            this.intDataOrig.TabIndex = 9;
+            intDataOrig.Location = new System.Drawing.Point(10, 83);
+            intDataOrig.Margin = new System.Windows.Forms.Padding(4);
+            intDataOrig.Name = "intDataOrig";
+            intDataOrig.ReadOnly = true;
+            intDataOrig.Size = new System.Drawing.Size(148, 23);
+            intDataOrig.TabIndex = 9;
             // 
             // labelBox
             // 
-            this.labelBox.Location = new System.Drawing.Point(8, 23);
-            this.labelBox.Margin = new System.Windows.Forms.Padding(4);
-            this.labelBox.Name = "labelBox";
-            this.labelBox.Size = new System.Drawing.Size(181, 22);
-            this.labelBox.TabIndex = 12;
+            labelBox.Location = new System.Drawing.Point(7, 22);
+            labelBox.Margin = new System.Windows.Forms.Padding(4);
+            labelBox.Name = "labelBox";
+            labelBox.Size = new System.Drawing.Size(159, 23);
+            labelBox.TabIndex = 12;
             // 
             // setLabel
             // 
-            this.setLabel.ForeColor = System.Drawing.Color.Black;
-            this.setLabel.Location = new System.Drawing.Point(8, 52);
-            this.setLabel.Name = "setLabel";
-            this.setLabel.Size = new System.Drawing.Size(87, 44);
-            this.setLabel.TabIndex = 14;
-            this.setLabel.Text = "Set\r\nLabel";
-            this.setLabel.UseVisualStyleBackColor = true;
-            this.setLabel.Click += new System.EventHandler(this.setLabel_Click);
+            setLabel.ForeColor = System.Drawing.Color.Black;
+            setLabel.Location = new System.Drawing.Point(7, 49);
+            setLabel.Name = "setLabel";
+            setLabel.Size = new System.Drawing.Size(76, 41);
+            setLabel.TabIndex = 14;
+            setLabel.Text = "Set\r\nLabel";
+            setLabel.UseVisualStyleBackColor = true;
+            setLabel.Click += setLabel_Click;
             // 
             // clrLabel
             // 
-            this.clrLabel.ForeColor = System.Drawing.Color.Black;
-            this.clrLabel.Location = new System.Drawing.Point(102, 52);
-            this.clrLabel.Name = "clrLabel";
-            this.clrLabel.Size = new System.Drawing.Size(87, 44);
-            this.clrLabel.TabIndex = 15;
-            this.clrLabel.Text = "Clear\r\nLabel";
-            this.clrLabel.UseVisualStyleBackColor = true;
-            this.clrLabel.Click += new System.EventHandler(this.clrLabel_Click);
+            clrLabel.ForeColor = System.Drawing.Color.Black;
+            clrLabel.Location = new System.Drawing.Point(89, 49);
+            clrLabel.Name = "clrLabel";
+            clrLabel.Size = new System.Drawing.Size(76, 41);
+            clrLabel.TabIndex = 15;
+            clrLabel.Text = "Clear\r\nLabel";
+            clrLabel.UseVisualStyleBackColor = true;
+            clrLabel.Click += clrLabel_Click;
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.labelBox);
-            this.groupBox3.Controls.Add(this.clrLabel);
-            this.groupBox3.Controls.Add(this.setLabel);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox3.Location = new System.Drawing.Point(669, 427);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(197, 112);
-            this.groupBox3.TabIndex = 14;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Entry Labels";
+            groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            groupBox3.Controls.Add(labelBox);
+            groupBox3.Controls.Add(clrLabel);
+            groupBox3.Controls.Add(setLabel);
+            groupBox3.ForeColor = System.Drawing.SystemColors.Control;
+            groupBox3.Location = new System.Drawing.Point(585, 400);
+            groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            groupBox3.Size = new System.Drawing.Size(172, 105);
+            groupBox3.TabIndex = 14;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Entry Labels";
             // 
-            // discriptionBox
+            // descriptionBox
             // 
-            this.descriptionBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descriptionBox.Location = new System.Drawing.Point(355, 546);
-            this.descriptionBox.Multiline = true;
-            this.descriptionBox.Name = "discriptionBox";
-            this.descriptionBox.Size = new System.Drawing.Size(511, 73);
-            this.descriptionBox.TabIndex = 15;
+            descriptionBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            descriptionBox.Location = new System.Drawing.Point(311, 512);
+            descriptionBox.Multiline = true;
+            descriptionBox.Name = "descriptionBox";
+            descriptionBox.Size = new System.Drawing.Size(448, 69);
+            descriptionBox.TabIndex = 15;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(882, 631);
-            this.Controls.Add(this.descriptionBox);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.refDataBox);
-            this.Controls.Add(this.curDataBox);
-            this.Controls.Add(this.valueList);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.fileList);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(900, 600);
-            this.Name = "Form1";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RDLParamEdit - Dreamixed";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.curDataBox.ResumeLayout(false);
-            this.curDataBox.PerformLayout();
-            this.refDataBox.ResumeLayout(false);
-            this.refDataBox.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            ClientSize = new System.Drawing.Size(774, 592);
+            Controls.Add(descriptionBox);
+            Controls.Add(groupBox3);
+            Controls.Add(refDataBox);
+            Controls.Add(curDataBox);
+            Controls.Add(valueList);
+            Controls.Add(label2);
+            Controls.Add(fileList);
+            Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Margin = new System.Windows.Forms.Padding(4);
+            MinimumSize = new System.Drawing.Size(790, 565);
+            Name = "Form1";
+            SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "RDLParamEdit - Dreamixed";
+            Load += Form1_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            curDataBox.ResumeLayout(false);
+            curDataBox.PerformLayout();
+            refDataBox.ResumeLayout(false);
+            refDataBox.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -542,6 +529,7 @@
         private System.Windows.Forms.Button clrLabel;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox descriptionBox;
+        private System.Windows.Forms.ToolStripMenuItem loadFromDolphinToolStripMenuItem;
     }
 }
 

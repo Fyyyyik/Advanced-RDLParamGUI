@@ -15,11 +15,15 @@ using IniParser.Model;
 using IniParser.Parser;
 using KirbyLib;
 using KirbyLib.IO;
+using DolphinMemory;
 
 namespace RDLParamGUI
 {
     public partial class Form1 : Form
     {
+        public const string USA_TITLE_ID = "SUKE01";
+        public const uint PARAM_ARCHIVE_MAGIC = 0x000003A4;
+
         Endianness endianness;
         byte[] version;
         uint unkXbin;
@@ -66,6 +70,60 @@ namespace RDLParamGUI
             fileList.EndUpdate();
         }
 
+        public void OpenSetup()
+        {
+            valueList.Items.Clear();
+            fileList.Items.Clear();
+            hexData.Text = "";
+            intData.Text = "";
+            floatData.Text = "";
+            hexDataOrig.Text = "";
+            intDataOrig.Text = "";
+            floatDataOrig.Text = "";
+            labelBox.Text = "";
+            descriptionBox.Text = "";
+
+            saveToolStripMenuItem.Enabled = false;
+            saveAsToolStripMenuItem.Enabled = false;
+
+            this.Enabled = false;
+            this.Cursor = Cursors.WaitCursor;
+        }
+
+        public void Open(Stream stream)
+        {
+            paramData = new Dictionary<string, ParamFile>();
+
+            GenericArchive archive = new GenericArchive();
+            using (EndianBinaryReader reader = new EndianBinaryReader(stream))
+                archive.Read(reader);
+
+            endianness = archive.XData.Endianness;
+            version = archive.XData.Version;
+
+            for (int i = 0; i < archive.Files.Count; i++)
+            {
+                ParamFile file = new ParamFile();
+                using (MemoryStream memStream = new MemoryStream(archive.Files[i].Data))
+                using (EndianBinaryReader reader = new EndianBinaryReader(memStream))
+                    file.Read(reader);
+
+                paramData.Add(archive.Files[i].Name, file);
+            }
+        }
+
+        public void OpenEnd()
+        {
+            UpdateFileList();
+            this.Cursor = Cursors.Default;
+            this.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
+            saveAsToolStripMenuItem.Enabled = true;
+            parameterPatchingToolStripMenuItem.Enabled = true;
+            updateLabelsToolStripMenuItem.Enabled = true;
+            RefreshReference();
+        }
+
         public void Save()
         {
             this.Enabled = false;
@@ -77,8 +135,8 @@ namespace RDLParamGUI
             foreach (string fileName in paramData.Keys)
             {
                 byte[] buffer;
-                using(MemoryStream stream = new MemoryStream())
-                using(EndianBinaryWriter writer = new EndianBinaryWriter(stream))
+                using (MemoryStream stream = new MemoryStream())
+                using (EndianBinaryWriter writer = new EndianBinaryWriter(stream))
                 {
                     paramData[fileName].Write(writer);
                     buffer = stream.ToArray();
@@ -90,8 +148,8 @@ namespace RDLParamGUI
                 archive.Files.Add(fileInfo);
             }
 
-            using(FileStream stream = new FileStream(filepath, FileMode.Open, FileAccess.Write))
-            using(EndianBinaryWriter writer = new EndianBinaryWriter(stream))
+            using (FileStream stream = new FileStream(filepath, FileMode.Open, FileAccess.Write))
+            using (EndianBinaryWriter writer = new EndianBinaryWriter(stream))
                 archive.Write(writer);
 
             if (filepath.EndsWith(".cmp") && autocompressOnSaveToolStripMenuItem.Checked)
@@ -113,16 +171,7 @@ namespace RDLParamGUI
             open.Filter = "XBIN Binary Archives|*.bin;*.cmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                valueList.Items.Clear();
-                fileList.Items.Clear();
-                hexData.Text = "";
-                intData.Text = "";
-                floatData.Text = "";
-                hexDataOrig.Text = "";
-                intDataOrig.Text = "";
-                floatDataOrig.Text = "";
-                labelBox.Text = "";
-                descriptionBox.Text = "";
+                OpenSetup();
 
                 filepath = open.FileName;
                 if (filepath.EndsWith(".cmp"))
@@ -135,30 +184,8 @@ namespace RDLParamGUI
                     decompress.Dispose();
                 }
 
-                saveToolStripMenuItem.Enabled = false;
-                saveAsToolStripMenuItem.Enabled = false;
-                paramData = new Dictionary<string, ParamFile>();
-
-                this.Enabled = false;
-                this.Cursor = Cursors.WaitCursor;
-
-                GenericArchive archive = new GenericArchive();
                 using(FileStream stream = new FileStream(filepath, FileMode.Open, FileAccess.Read))
-                using(EndianBinaryReader reader = new EndianBinaryReader(stream))
-                    archive.Read(reader);
-
-                endianness = archive.XData.Endianness;
-                version = archive.XData.Version;
-
-                for (int i = 0; i < archive.Files.Count; i++)
-                {
-                    ParamFile file = new ParamFile();
-                    using(MemoryStream stream = new MemoryStream(archive.Files[i].Data))
-                    using(EndianBinaryReader reader = new EndianBinaryReader(stream))
-                        file.Read(reader);
-
-                    paramData.Add(archive.Files[i].Name, file);
-                }
+                    Open(stream);
 
                 if (filepath.EndsWith(".cmp"))
                 {
@@ -170,14 +197,7 @@ namespace RDLParamGUI
                     recompress.Dispose();
                 }
 
-                UpdateFileList();
-                this.Cursor = Cursors.Default;
-                this.Enabled = true;
-                saveToolStripMenuItem.Enabled = true;
-                saveAsToolStripMenuItem.Enabled = true;
-                parameterPatchingToolStripMenuItem.Enabled = true;
-                updateLabelsToolStripMenuItem.Enabled = true;
-                RefreshReference();
+                OpenEnd();
             }
         }
 
@@ -209,15 +229,15 @@ namespace RDLParamGUI
                 refPath = Directory.GetCurrentDirectory() + @"\Reference.bin";
 
                 GenericArchive refArchive = new GenericArchive();
-                using(FileStream stream = new FileStream(refPath, FileMode.Open, FileAccess.Read))
-                using(EndianBinaryReader reader = new EndianBinaryReader(stream))
+                using (FileStream stream = new FileStream(refPath, FileMode.Open, FileAccess.Read))
+                using (EndianBinaryReader reader = new EndianBinaryReader(stream))
                     refArchive.Read(reader);
 
                 for (int i = 0; i < refArchive.Files.Count; i++)
                 {
                     ParamFile paramFile = new ParamFile();
-                    using(MemoryStream stream = new MemoryStream(refArchive.Files[i].Data))
-                    using(EndianBinaryReader reader = new EndianBinaryReader(stream))
+                    using (MemoryStream stream = new MemoryStream(refArchive.Files[i].Data))
+                    using (EndianBinaryReader reader = new EndianBinaryReader(stream))
                         paramFile.Read(reader);
 
                     refData.Add(refArchive.Files[i].Name, paramFile);
@@ -277,7 +297,7 @@ namespace RDLParamGUI
                     intDataOrig.Text = origData[index].ToString();
                     floatDataOrig.Text = BitConverter.ToSingle(origFloatBytes, 0).ToString();
                 }
-                catch 
+                catch
                 {
                     hexDataOrig.Text = "";
                     intDataOrig.Text = "";
@@ -292,7 +312,7 @@ namespace RDLParamGUI
                 intData.Text = data[index].ToString();
                 floatData.Text = BitConverter.ToSingle(floatBytes, 0).ToString();
             }
-            catch 
+            catch
             {
                 hexData.Text = "";
                 intData.Text = "";
@@ -316,7 +336,8 @@ namespace RDLParamGUI
                         descriptionBox.Text = labelData.Sections[f][v + "D"].Replace("<br>", Environment.NewLine);
                     }
                 }
-            } catch { }
+            }
+            catch { }
         }
 
         private void updateLabelsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -368,7 +389,8 @@ namespace RDLParamGUI
                     hexData.Text = parsedFloat.ToString("X8");
                     intData.Text = parsedFloat.ToString();
                     paramData[fileList.SelectedItem.ToString()].Parameters[index] = uint.Parse(hexData.Text, System.Globalization.NumberStyles.HexNumber);
-                } catch { }
+                }
+                catch { }
             }
         }
 
@@ -506,7 +528,7 @@ namespace RDLParamGUI
                 labelData.Sections[f].RemoveKey(v + "D");
 
             // Set new labels
-            
+
             if (!String.IsNullOrEmpty(labelBox.Text))
                 labelData.Sections[f].AddKey(v, labelBox.Text);
             if (!String.IsNullOrEmpty(descriptionBox.Text))
@@ -514,7 +536,7 @@ namespace RDLParamGUI
                 string neoDescript = descriptionBox.Text.Replace(Environment.NewLine, "<br>");
                 labelData.Sections[f].AddKey(v + "D", neoDescript);
             }
-                
+
 
             // Write to labels.ini
             new FileIniDataParser().WriteFile(Directory.GetCurrentDirectory() + "\\labels.ini", labelData);
@@ -570,6 +592,78 @@ namespace RDLParamGUI
                 CreateNoWindow = true
             };
             return processStartInfo;
+        }
+
+        private void loadFromDolphinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadParamsFromMem();
+        }
+
+        void LoadParamsFromMem()
+        {
+            DolphinMemoryReader reader = new DolphinMemoryReader(Process.GetProcessesByName("dolphin")[0]);
+
+            Debug.WriteLine($"Read {reader.ReadUInt32(0x80000034):X}");
+
+            Debug.WriteLine($"Read {reader.ReadUInt32(0x91764391):X}");
+
+            foreach (byte b in reader.ReadBytes(0x91764392, 6))
+                Debug.WriteLine($"{b:X}");
+
+            OpenSetup();
+
+            long paramAddress = FindParamsInMem(reader);
+            uint fileLength = reader.ReadUInt32(paramAddress + 0x8);
+            byte[] buffer = reader.ReadBytes(paramAddress, (int)fileLength);
+
+            using (MemoryStream stream = new MemoryStream(buffer))
+                Open(stream);
+
+            OpenEnd();
+        }
+
+        public bool IsKRtDLOpened(DolphinMemoryReader reader)
+        {
+            string titleId = Encoding.UTF8.GetString(reader.ReadBytes(0x80000000, 6));
+
+            if(titleId != USA_TITLE_ID)
+            {
+                MessageBox.Show($"Expected title ID \"{USA_TITLE_ID}\". Got \"{titleId}\".", "Wrong game", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        public long FindParamsInMem(DolphinMemoryReader reader)
+        {
+            List<long> potentialAddresses = new List<long>(reader.SearchBytesInRange(0x91000000, 0x92800000, [0x58, 0x42, 0x49, 0x4E, 0x12, 0x34, 0x02, 0x00]));
+
+            // First filter out everything that is not a param file.
+            List<long> validAddresses = new List<long>();
+            for(int i = 0; i < potentialAddresses.Count; i++)
+            {
+                if(reader.ReadUInt32(potentialAddresses[i] + 0xC) == PARAM_ARCHIVE_MAGIC)
+                    validAddresses.Add(potentialAddresses[i]);
+            }
+            potentialAddresses = validAddresses;
+
+            // Now we find which one has the highest length.
+            uint maximum = 0;
+            int maximumIndex = -1;
+            for(int i = 0; i < potentialAddresses.Count; i++)
+            {
+                uint length = reader.ReadUInt32(potentialAddresses[i] + 0x8);
+                if (length > maximum)
+                {
+                    maximum = length;
+                    maximumIndex = i;
+                }
+            }
+
+            if (maximumIndex == -1) return -1;
+
+            return potentialAddresses[maximumIndex];
         }
     }
 }
